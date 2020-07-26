@@ -32,7 +32,7 @@ public class MemberMenu {
 			case 1: insertMember(); break;
 			case 2: mc.selectList(); break;
 			case 3: String userId = inputMemberId();	
-					mc.selectByUserId(userId);break;
+			//		mc.selectByUserId(userId);break;
 			case 4: break;
 			case 5: break;
 			case 6: break;
@@ -75,11 +75,6 @@ public class MemberMenu {
 		
 		// 회원가입 요청하기 (사용자가 입력한 값들 담은 Member객체 전달하면서)
 		mc.insertMember(new Member(userId,userPwd,userName,gender,age,email,phone,address, hobby));
-		
-	// Member m = new Member(userId,userPwd,userName,gender,age,email,phone,address, hobby);
-	// mc.insertMember(m)
-		
-		
 	}
 	// 2. 회원 아이디 입력 받는 화면 (아이디로검색, 정보수정, 회원탈퇴)
 	public String inputMemberId() { // 메소드는 재사용 많이 할 수록 좋다

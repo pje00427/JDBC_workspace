@@ -33,7 +33,7 @@ public class MemberController {
 
 	public void selectByUserId(String userId) {
 
-		Member m = new MemberDao().selectByUserId(userId);
+		 new MemberDao().selectByUserId(userId);
 
 		if (m != null) { // 조회가되었을 경우
 			new MemberMenu().displayMember(m);

@@ -33,9 +33,12 @@ public class MemberMenu {
 			case 2: mc.selectList(); break;
 			case 3: String userId = inputMemberId();	
 					mc.selectByUserId(userId);break;
-			case 4: break;
-			case 5: break;
-			case 6: break;
+			case 4: //String userName = inputMemberName();  
+					//mc.selectByUserName(userName);
+					mc.selectByUserName(inputMemberName());
+					break;
+			case 5: updateMember(); break;
+			case 6: mc.deleteMember(inputMemberId()); break;		
 			case 0: System.out.println("정말로 끝내겠습니까? (y/n) : ");
 					if(sc.nextLine().toUpperCase().charAt(0) == 'Y') {
 						System.out.println("프로그램을 종료합니다.");
@@ -133,7 +136,6 @@ public class MemberMenu {
 		System.out.println("\n조회된 회원 정보는 다음과 같습니다.");
 		System.out.println(m);// 알아서toString메소드 호출한다.
 	}
-	
 	
 	// 5. 조회 요청시 여러행 조회 되었을 때 응답화면 
 	public void displayMemberList(ArrayList<Member> list) {

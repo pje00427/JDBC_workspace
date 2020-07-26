@@ -82,7 +82,7 @@ public class MemberDao {
 	}
 
 // 머르겠음
-	public ArrayList<Member> selectList() {
+	public void selectList() {
 		// 처리된 결과(조회된 회원들== 여러행) 들을 담아줄 ArrayList생성	
 		ArrayList<Member> list = new ArrayList<>();
 		// DB의 연결정보를 담는 객체 선언
@@ -99,41 +99,15 @@ public class MemberDao {
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "JDBC", "JDBC");
 			pstmt = conn.prepareStatement(sql); //PreparedStatement 객체생성시 sql문담은채로 생성
 			
-			// 현재 pstmt에 담긴 sql문이 애초에 완성형태이기때문에 바로 실행 가능
-						rset = pstmt.executeQuery();
-						
-						while(rset.next()) {
-							list.add(new Member(rset.getInt("USERNO"),
-												rset.getString("USERID"),
-												rset.getString("USERPWD"),
-												rset.getString("USERNAME"),
-												rset.getString("GENDER"),
-												rset.getInt("AGE"),
-												rset.getString("EMAIL"),
-												rset.getString("PHONE"),
-												rset.getString("ADDRESS"),
-												rset.getString("HOBBY"),
-												rset.getDate("ENROLLDATE")));	
-						}
-			
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();
 		} catch (SQLException e) {
 		
 			e.printStackTrace();
-		}finally {
-			try {
-				rset.close();
-				pstmt.close();
-				conn.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 		
-		return list;
+		
 	}
 	
 	public void selectByUserId(String userId) {

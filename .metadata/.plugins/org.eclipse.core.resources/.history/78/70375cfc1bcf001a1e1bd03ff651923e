@@ -82,7 +82,7 @@ public class MemberDao {
 	}
 
 // 머르겠음
-	public ArrayList<Member> selectList() {
+	public void selectList() {
 		// 처리된 결과(조회된 회원들== 여러행) 들을 담아줄 ArrayList생성	
 		ArrayList<Member> list = new ArrayList<>();
 		// DB의 연결정보를 담는 객체 선언
@@ -133,7 +133,7 @@ public class MemberDao {
 			}
 		}
 		
-		return list;
+		
 	}
 	
 	public void selectByUserId(String userId) {

@@ -32,7 +32,7 @@ public class MemberMenu {
 			case 1: insertMember(); break;
 			case 2: mc.selectList(); break;
 			case 3: String userId = inputMemberId();	
-			//		mc.selectByUserId(userId);break;
+					mc.selectByUserId(userId);break;
 			case 4: break;
 			case 5: break;
 			case 6: break;

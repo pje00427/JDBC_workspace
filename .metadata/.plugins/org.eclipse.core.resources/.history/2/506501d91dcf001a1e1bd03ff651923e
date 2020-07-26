@@ -38,7 +38,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		
 		// 실행하고자 하는 sql문 미완성된 형태로 둘 수 있음! --> 미리 사용자가 입력한 값들 들어갈 수 있게 공간(?) 확보
-		String sql = "INSERT INTO MEMBER VALUES(SEQ_USERNO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE)";
+		String sql = "INSERT INTO MEMBER VALUES(SEQ_USWENO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, SYSDATE)";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -81,14 +81,13 @@ public class MemberDao {
 		
 	}
 
-
+// 머르겠음
 	public ArrayList<Member> selectList() {
 		// 처리된 결과(조회된 회원들== 여러행) 들을 담아줄 ArrayList생성	
 		ArrayList<Member> list = new ArrayList<>();
 		// DB의 연결정보를 담는 객체 선언
 		Connection conn = null;
 		// SQL문 실행 후 결과 받는 객체 선언
-		//Statement stmt = null;
 		PreparedStatement pstmt = null;
 		// Select문 실행 후 조회 결과값들이 실질적으로 담길 ResultSet 객체 선언
 		ResultSet rset = null;	

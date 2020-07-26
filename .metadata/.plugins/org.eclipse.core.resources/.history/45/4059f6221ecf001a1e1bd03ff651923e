@@ -31,14 +31,14 @@ public class MemberController {
 
 	}
 
-//	public void selectByUserId(String userId) {
-//
-//		Member m = new MemberDao().selectByUserId(userId);
-//
-//		if (m != null) { // 조회가되었을 경우
-//			new MemberMenu().displayMember(m);
-//		} else { // 조회가 안됐다
-//			new MemberMenu().displayNoData("조회된 데이터가 없습니다.");
-//		}
-//	}
+	public void selectByUserId(String userId) {
+
+		Member m = new MemberDao().selectByUserId(userId);
+
+		if (m != null) { // 조회가되었을 경우
+			new MemberMenu().displayMember(m);
+		} else { // 조회가 안됐다
+			new MemberMenu().displayNoData("조회된 데이터가 없습니다.");
+		}
+	}
 }

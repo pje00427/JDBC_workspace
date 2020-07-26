@@ -101,7 +101,7 @@ public class MemberDao {
 			pstmt = conn.prepareStatement(sql); //PreparedStatement 객체생성시 sql문담은채로 생성
 			
 			// 현재 pstmt에 담긴 sql문이 애초에 완성형태이기때문에 바로 실행 가능
-						rset = pstmt.executeQuery();
+						rset = pstmt.executeQuery(sql);
 						
 						while(rset.next()) {
 							list.add(new Member(rset.getInt("USERNO"),

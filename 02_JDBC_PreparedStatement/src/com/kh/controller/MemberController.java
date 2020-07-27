@@ -94,5 +94,14 @@ public class MemberController {
 		
 	}
 	
-	
+	public void loginMember(String userId, String userPwd) {
+		Member m = new MemberDao().loginMember(userId, userPwd);
+		
+		if(m == null) {
+			new MemberMenu().displayNoData("로그인 실패");
+		}else {
+			new MemberMenu().displayMember(m);
+		}
+	}
+
 }

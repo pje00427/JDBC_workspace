@@ -23,6 +23,7 @@ public class MemberMenu {
 			System.out.println("4. 회원 이름(키워드)으로 검색");
 			System.out.println("5. 회원 정보 변경");
 			System.out.println("6. 회원 탈퇴");
+			System.out.println("7. 로그인");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("메뉴 선택 : ");
 			menu = sc.nextInt();
@@ -38,7 +39,8 @@ public class MemberMenu {
 					mc.selectByUserName(inputMemberName());
 					break;
 			case 5: updateMember(); break;
-			case 6: mc.deleteMember(inputMemberId()); break;		
+			case 6: mc.deleteMember(inputMemberId()); break;
+			case 7: loginMember(); break;
 			case 0: System.out.println("정말로 끝내겠습니까? (y/n) : ");
 					if(sc.nextLine().toUpperCase().charAt(0) == 'Y') {
 						System.out.println("프로그램을 종료합니다.");
@@ -146,7 +148,18 @@ public class MemberMenu {
 	}
 	
 	
-	
+	// 5. 로그인 하는 화면
+		public void loginMember() {
+			System.out.println("\n==== 로그인 ====");
+			System.out.print("아이디 : ");
+			String userId = sc.nextLine();
+			
+			System.out.print("비밀번호 : ");
+			String userPwd = sc.nextLine();
+			
+			// 전달할 값이 얼마 안되니깐 그냥 따로 보냄!
+			mc.loginMember(userId, userPwd);
+		}
 	
 	
 	

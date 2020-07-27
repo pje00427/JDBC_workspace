@@ -158,7 +158,7 @@ public class MemberDao {
 			
 			rset = pstmt.executeQuery();
 			
-			if(rset.next()) {
+			if(rset.next()) { 
 				m = new Member(rset.getInt("USERNO"),
 								rset.getString("USERID"),
 								rset.getString("USERPWD"),
@@ -210,7 +210,7 @@ public class MemberDao {
 		
 		// 해결 방법2.
 		String sql = "SELECT * FROM MEMBER WHERE USERNAME LIKE '%' || ? || '%'";
-		
+		// '%'|| '강' || '%'  => '%강%'
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "JDBC", "JDBC");
@@ -222,10 +222,10 @@ public class MemberDao {
 			// 해결 방법2 의 sql문일 경우.
 			pstmt.setString(1, keyword);
 			
-			rset = pstmt.executeQuery();
+			rset = pstmt.executeQuery(); // pstmt에 완성형이 담겨있기 때문에 이때 실행하면되고, sql을 매개변수로 담을 필요 없다
 			
 			while(rset.next()) {
-				list.add(new Member(rset.getInt("USERNO"),
+				list.add(new Member(rset.getInt("USERNO"), // 컬럼명대신 1,2,로 기입해도 된다
 									rset.getString("USERID"),
 									rset.getString("USERPWD"),
 									rset.getString("USERNAME"),

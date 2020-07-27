@@ -9,12 +9,13 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\JDBC\03_JDBC_Service_Template"/>
 			<item value="C:\JDBC\02_JDBC_PreparedStatement"/>
 			<item value="C:\Users\jieun\Desktop\jdbc_workspace\01_JDBC_Statement"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
-			<item value="C:\Users\jieun\Desktop\jdbc_workspace\01_JDBC_Statement\src\com\kh\model\dao\MemberDao.java"/>
 			<item value=""/>
+			<item value="C:\Users\jieun\Desktop\jdbc_workspace\01_JDBC_Statement\src\com\kh\model\dao\MemberDao.java"/>
 		</list>
 	</section>
 </section>

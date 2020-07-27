@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import com.kh.common.JDBCTemplate;
 import com.kh.model.vo.Member;
-
+//DAO에서는 오로지 SQL문 실행 업무만 집중적으로!
 public class MemberDao {
 
 	public int insertMember(Connection conn, Member m) {

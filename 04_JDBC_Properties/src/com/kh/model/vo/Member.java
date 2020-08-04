@@ -21,7 +21,6 @@ import java.sql.Date;
  */
 
 public class Member {
-
 	// 필드는 DB컬럼 정보와 동일하게 작업하자
 	private int userNO;
 	private String userId;

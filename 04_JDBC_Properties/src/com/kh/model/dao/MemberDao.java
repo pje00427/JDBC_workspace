@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
 
+
 import com.kh.model.vo.Member;
 
 // DAO에서는 오로지 sql문 실행업무만 집중적으로 !
@@ -77,7 +78,7 @@ public class MemberDao {
 		}
 		return result;
 	}
-	
+
 	public ArrayList<Member> selectList(Connection conn) { //select문 여러행 조회
 		
 		ArrayList<Member> list = new ArrayList<>();

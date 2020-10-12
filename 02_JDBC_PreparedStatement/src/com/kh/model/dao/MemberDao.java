@@ -339,7 +339,41 @@ public class MemberDao {
 		return result;
 		
 	}
-	
+	public boolean setlogin(String myid, String mypwd) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		boolean m = false;
+		String sql = "SELECT * FROM MEMBER WHERE MYID=? AND MYPWD=?";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "KH", "KH");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, myid);
+			pstmt.setString(2, mypwd);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				 m = rset.next();
+			}
+		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rset.close();
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} return m;
+	}
 	public Member loginMember(String userId, String userPwd) {
 		
 		Member m = null;

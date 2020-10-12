@@ -82,6 +82,7 @@ public class MemberMenu {
 	//	mc.insertMember(new Member(userId,userPwd,userName,gender,age,email,phone,address, hobby));
 		
 	// Member m = new Member(userId,userPwd,userName,gender,age,email,phone,address, hobby);
+	
 	 mc.insertMember(new Member(userId,userPwd,userName,gender,age,email,phone,address, hobby));
 		
 		
